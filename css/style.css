@@ -1,0 +1,411 @@
+:root {
+    --main-color: #8E7754;
+    --color-text: #686868;
+    --font-size15: 0.95rem;
+    --font-size18: 1.125rem;
+    --color-text1: #969696;
+    --color-icon: #403D38;
+}
+
+.bg-icon {
+    background-color: var(--color-icon);
+}
+
+.text-color {
+    color: var(--color-text);
+}
+
+.text-color1 {
+    color: var(--color-text1);
+}
+
+.text15 {
+    font-size: var(--font-size15);
+}
+
+.text18 {
+    font-size: var(--font-size18);
+}
+
+.font-text {
+    font-family: "Alegreya Sans";
+}
+
+.bg-color-accent {
+    background-color: var(--main-color);
+}
+
+.color-accent {
+    color: var(--main-color);
+}
+
+body {
+    font-family: 'Alegreya', serif;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+/**************************************/
+#sideBar {
+    display: flex;
+    position: fixed;
+    z-index: 999999;
+    width: 200px;
+    top: 30%;
+}
+.sidBar-inner {
+    background-color: #FFF;
+    padding: .5rem;
+}
+
+#sideBar i {
+    align-self: self-start;
+    background-color: #FFF;
+    color: #666;
+    padding: .5rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.sidBar-inner h4{
+    font-size: 1.2rem;
+}
+.colorBox {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+/*****************loding Screen*/
+.loadingScreen {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999999999999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid #FFF;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/***************************************/
+
+.arrowUP {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    border-radius: 50%;
+    border: #353330;
+    padding: .5rem;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    background-color: #00000099;
+    display: none;
+    z-index: 999999999;
+}
+
+header {
+    background-image: url(../images/drew-coffman-1872.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+nav {
+    z-index: 9999;
+    transition: background-color 2s;
+}
+
+nav .nav-links a {
+    font-size: 1.125rem !important;
+    position: relative;
+}
+
+nav li a {
+    position: relative;
+}
+
+.navbar-nav .nav-link.active {
+    color: #fff;
+}
+
+nav li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 20%;
+    width: 0px;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: width 1s;
+}
+
+nav li a:hover {
+    color: black !important;
+}
+
+body:has(.about:target) li a[href="#About"],
+body:has(.ourOffer:target) li a[href="#OurOffer"],
+body:has(.gallery:target) li a[href="#Gallery"],
+body:has(.blog:target) li a[href="#Blog"],
+body:has(.footer:target) li a[href="#Contact"] {
+    color: black !important;
+}
+
+body:not(body:has(:target)) li a[href="#Home"]::before,
+body:has(.home:target) li a[href="#Home"]::before,
+body:has(.about:target) li a[href="#About"]::before,
+body:has(.ourOffer:target) li a[href="#OurOffer"]::before,
+body:has(.gallery:target) li a[href="#Gallery"]::before,
+body:has(.blog:target) li a[href="#Blog"]::before,
+body:has(.footer:target) li a[href="#Contact"]::before {
+    width: 50px;
+}
+
+.navbar-toggler i {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-toggler i.fa-xmark,
+.navbar-toggler i.fa-bars {
+    font-size: 2rem !important;
+    opacity: 1;
+}
+
+/************************************************************/
+#Home .btn-color {
+    background-color: var(--main-color);
+}
+
+.btn-color:hover {
+    background-color: #fff;
+    color: black !important;
+}
+
+#Home .text-p {
+    font-size: 1.5rem;
+    line-height: 1.86em;
+    margin: .625rem 0rem 1.25rem;
+
+}
+
+#Home h1 {
+    font-size: 4.75rem;
+    margin-bottom: 18px;
+    padding: 0px !important;
+
+}
+
+#Home p {
+    font-size: 1.375rem;
+    margin-bottom: .3125rem;
+
+}
+
+#Home .circle-home {
+    bottom: 5%;
+    left: 48%;
+    width: 2rem;
+    height: 3.125rem;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+#Home .circle-point {
+    width: .5rem;
+    height: .5rem;
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    top: 10%;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    animation: mymove 3s infinite;
+
+}
+
+@keyframes mymove {
+    0% {
+        top: 10%;
+        opacity: 0;
+    }
+
+    20% {
+        top: 20%;
+        opacity: 0.5;
+    }
+
+    30% {
+        top: 30%;
+        opacity: 0.5;
+    }
+
+    40% {
+        top: 40%;
+        opacity: 0.5;
+    }
+
+    50% {
+        top: 50%;
+        opacity: 0.5;
+    }
+
+}
+
+
+/************************************************************/
+#About p {
+    line-height: 1.86em;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    font-family: "Alegreya Sans";
+}
+
+#About .icon-list li,
+#Blog li,
+#Contact li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+
+}
+
+#About .icon-list i {
+    background: none !important;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 50%;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.25rem;
+    padding-top: .6rem;
+
+
+}
+
+.circle-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+#OurOffer,
+#Blog {
+    background-color: #f8f8f8;
+}
+
+#Contact .footer-main {
+    background-color: #403D38;
+}
+
+#Contact .footer-bottom {
+    background-color: #353330;
+}
+
+#Contact .footer-bottom .social:hover {
+    color: #fff;
+}
+
+#Contact .footer-bottom .icon-facebook:hover {
+    background-color: #4267B2;
+}
+
+#Contact .footer-bottom .icon-google-plus:hover {
+    background-color: #dd4b39;
+}
+
+#Contact .footer-bottom .icon-linkedin:hover {
+    background-color: #0077b5;
+}
+
+#Contact .footer-bottom .icon-twitter:hover {
+    background-color: #1DA1F2;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #Home h1 {
+        font-size: 2.125rem !important;
+    }
+
+    #Home p,
+    #Home .text-p {
+        font-size: 1rem;
+    }
+
+
+}
+
+@media screen and (max-width: 992px) {
+    nav {
+        background-color: #fff !important;
+    }
+
+    nav .nav-link {
+        color: black !important;
+        font-size: 15px;
+        opacity: .8;
+        border-bottom: 1px solid #e7e7e7;
+        font-family: "Alegreya Sans";
+        padding: 1rem;
+    }
+
+    nav li a:hover {
+        color: #8E7754 !important;
+    }
+
+    nav .nav-link[href="#Contact"] {
+        border-bottom: none;
+    }
+
+    nav li a::before {
+        content: none;
+        width: 0;
+        height: 0;
+        transition: none;
+        background-color: transparent;
+    }
+
+    .navbar-nav {
+        padding-left: 1rem;
+    }
+
+    body:has(.about:target) nav .navbar-nav,
+    body:has(.ourOffer:target) nav .navbar-nav,
+    body:has(.gallery:target) nav .navbar-nav,
+    body:has(.blog:target) nav .navbar-nav,
+    body:has(.footer:target) nav .navbar-nav,
+    body:has(.home:target) nav .navbar-nav {
+        display: none;
+    }
+
+    body:has(.collapse:target) nav .navbar-nav {
+        display: block !important;
+    }
+
+}
