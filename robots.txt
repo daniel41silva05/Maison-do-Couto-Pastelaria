@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maison-do-couto.netlify.app/sitemap.xml
